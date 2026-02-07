@@ -5,4 +5,5 @@ int main() {
   b = 0; // error
   const string s = "helloworld";
   const int i, j = 0;
+  const int ii = 0, jj = 0;
 }

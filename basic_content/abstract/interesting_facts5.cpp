@@ -14,6 +14,7 @@ class Base {
 public:
   Base() { cout << "Constructor: Base" << endl; }
   virtual ~Base() { cout << "Destructor : Base" << endl; }
+  // ~Base() { cout << "Destructor : Base" << endl; } // 如果使用这个，上面的注释了，那么派生类里面的析构就不会调用了。
 };
 
 class Derived : public Base {
@@ -27,3 +28,11 @@ int main() {
   delete Var;
   return 0;
 }
+
+
+/*
+
+解答：
+作者想说明：当你用基类指针指向派生类对象并 delete 时，析构函数必须是虚的，否则只会执行基类析构，派生类析构不会被调用。
+
+*/
